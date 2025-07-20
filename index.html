@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salon Accounting System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Salon Accounting Dashboard</h1>
+  </header>
+
+  <main>
+    <!-- Daily Entry Form -->
+    <section class="card">
+      <h2>New Daily Entry</h2>
+      <form id="entryForm">
+        <label>
+          Date:
+          <input type="date" id="date" required />
+        </label>
+        <label>
+          Description:
+          <input type="text" id="description" required />
+        </label>
+        <label>
+          Amount (UGX):
+          <input type="number" id="amount" required />
+        </label>
+        <label>
+          Type:
+          <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </label>
+        <button type="submit">Add Entry</button>
+      </form>
+    </section>
+
+    <!-- Records Table -->
+    <section class="card">
+      <h2>Daily Records</h2>
+      <table id="recordsTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Amount (UGX)</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Entries will be inserted here dynamically -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="card">
+      <h2>Monthly Summary</h2>
+      <p><strong>Total Income:</strong> UGX <span id="totalIncome">0</span></p>
+      <p><strong>Total Expenses:</strong> UGX <span id="totalExpense">0</span></p>
+      <p><strong>Net Profit:</strong> UGX <span id="netProfit" class="neutral">0</span></p>
+      <button onclick="window.print()">Print Report</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Salon Accounting &copy; 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
